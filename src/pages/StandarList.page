@@ -1,0 +1,17 @@
+<apex:page standardController="Account" recordSetVar="accounts" renderAs="pdf">
+<apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockTable value="{!accounts}" var="ac">
+        <apex:column headerValue="Account Namne" >
+        <apex:outputField value=" {!ac.name}" />
+        </apex:column>
+        </apex:pageBlockTable>
+                <apex:pageBlockButtons >
+        <apex:commandButton value="First" action="{!first}"/>
+                    <apex:commandButton value="Last" action="{!Last}"/>
+                       <apex:commandButton value="Next" action="{!Next}"/>
+                      <apex:commandButton value="Previous" action="{!Previous}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

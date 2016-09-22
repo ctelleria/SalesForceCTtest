@@ -1,0 +1,17 @@
+<apex:page standardController="Invoice__c" recordSetVar="invoices">    
+        <apex:pageBlock >
+            <apex:form >
+                <apex:panelGrid columns="2">
+                      <apex:outputLabel value="View:" />
+                    <apex:selectList value="{!filterId}" size="1">
+                         <apex:actionSupport event="onchange" rerender="lis"/>
+                        <apex:selectOptions value="{!listviewoptions}"/>
+                    </apex:selectList>
+                </apex:panelGrid>
+                <apex:pageBlockTable value="{! invoices}" var="inv" id="lis">
+                    <apex:column value="{! inv.name}" />
+                     <apex:column value="{! inv.Status__c}" />
+                </apex:pageBlockTable> 
+             </apex:form>
+        </apex:pageBlock>    
+</apex:page>

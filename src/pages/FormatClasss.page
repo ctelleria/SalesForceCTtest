@@ -1,0 +1,17 @@
+<apex:page sidebar="true" showHeader="true"  standardController="Account">
+    <p>
+        Hellow world!!!
+    </p>
+    <apex:pageBlock title="Information Person">
+        <apex:pageBlockSection columns="1">
+            <p>
+                {! $User.FirstName} {!$User.LastName}
+            </p>
+            <p>
+                Today is .... {! TODAY()}
+            </p>      
+          <apex:outputField value="{! Account.Name}" />     {!  Account.Phone }                   
+        </apex:pageBlockSection>      
+  
+    </apex:pageBlock>
+</apex:page>

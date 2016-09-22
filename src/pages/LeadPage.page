@@ -1,0 +1,57 @@
+<apex:page controller="InsertLeadController" showHeader="false">
+    <script >
+    function validate(){
+        if(document.getElementById("{!$Component.LF.LBD.lastName}").value==''|| document.getElementById("{!$Component.LF.LBD.company}").value==''){
+            alert("Must be enter the data of company or last name for insert the data of lead");
+        }else{
+            alert("Account has been inserted");
+            CallsubmitLead();
+        }
+    }
+    </script>
+    <apex:form id="LF">       
+        <apex:actionFunction action="{!submitLead}" name="CallsubmitLead"  reRender="LBD"/>
+        <apex:pageBlock title="Lead Form- Enter Lead details" id="LBD">  
+            <table>
+                <tr>
+                    <td> <apex:outputText value="First Name"></apex:outputText>
+                    </td>
+                    <td><apex:inputText value="{!firstName}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><apex:outputText value="Last Name" >
+                        </apex:outputText>
+                    </td>
+                    <td><apex:inputText value="{!lastName}" id="lastName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><apex:outputText value="Company" > 
+                        </apex:outputText>
+                    </td>
+                    <td><apex:inputText value="{!company}" id="company"/>
+                    </td>
+                </tr> 
+                <tr>
+                    <td><apex:outputText value="Lead Status">
+                        </apex:outputText>
+                    </td>
+                    <td>
+                        <apex:selectList value="{!statusOptions}">
+                            <apex:selectOptions value="{!items}"> </apex:selectOptions>
+                        </apex:selectList>                        
+                    </td>
+                </tr> 
+                <tr>
+                    <td><apex:outputText value="Mobile">
+                        </apex:outputText>
+                    </td>
+                    <td><apex:inputText value="{!mobile}"/>
+                    </td>
+                </tr>                 
+            </table>
+            <apex:commandButton value="Save" onclick="validate()"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

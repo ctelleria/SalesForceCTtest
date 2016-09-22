@@ -1,0 +1,9 @@
+<apex:page standardController="Invoice__c" recordSetVar="invoices" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{! invoices}" var="inv">
+                <apex:column value="{!inv.Name}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

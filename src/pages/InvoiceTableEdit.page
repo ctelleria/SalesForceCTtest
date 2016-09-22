@@ -1,0 +1,14 @@
+<apex:page standardController="Invoice__c" recordSetVar="Invoices">
+    <apex:form >
+        <apex:pageBlock >            
+            <apex:pageBlockTable value="{!Invoices }" var="inv" columns="2">
+                <apex:column value="{!inv.name }"  />                
+                <apex:column headerValue="Status" value="{!inv.status__c }"   >                                          
+                </apex:column>   
+                <apex:column >
+                    <apex:commandButton id="save" value="Save" action="{!save}"/>
+                </apex:column>                           
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

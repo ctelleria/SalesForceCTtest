@@ -1,0 +1,16 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <apex:form >
+        <apex:pageBlock title="Edit Account for {!$User.FirstName}">           
+            <apex:pageBlock >
+                <apex:pageBlockTable value="{!accounts}" var="acc" columns="2">
+                    <apex:column headerValue="Account Namne" >
+                                               <apex:inputField value="{!acc.name}"/> 
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>       
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

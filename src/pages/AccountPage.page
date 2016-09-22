@@ -1,0 +1,13 @@
+<apex:page >
+    <apex:pageBlock >    
+        <p>
+            prueba
+        </p>
+        <apex:pageBlockSection title="Information Section">
+            <c:ComponentInformation textValue="This is my first text" textColor="red">
+            </c:ComponentInformation>
+            <c:ComponentInformation textValue="This is my secod text" textColor="blue">
+            </c:ComponentInformation>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

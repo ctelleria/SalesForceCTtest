@@ -1,0 +1,14 @@
+<apex:page controller="SecondController" tabStyle="Account">
+    <apex:pageBlock title="Hello {!$User.FirstName}">You belong to the account {!account.name}
+    </apex:pageBlock>
+    <apex:pageBlock title="Contacts">
+        <apex:dataTable value="{!account.contacts}" var="contact" cellpadding="4" border="1" >
+            <apex:column >
+                {!contact.FirstName}
+            </apex:column>
+            <apex:column >
+                {!contact.LastName}
+            </apex:column>
+        </apex:dataTable>
+    </apex:pageBlock>
+</apex:page>

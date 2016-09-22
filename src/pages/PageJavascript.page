@@ -1,0 +1,30 @@
+<apex:page id="pg" >    
+    <apex:form id="fm">
+        <apex:pageBlock id="pb1">
+            <apex:outputText value="Name:"></apex:outputText> 
+            <apex:inputText id="Name" onchange="show()" />
+            <br/><br/>  
+            <apex:outputText value="Age:"></apex:outputText> 
+            <apex:inputText id="Age" onchange="methodAge()"/>     
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Validate"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <script>
+        function show(){
+            alert ('*******Test');
+            var myName1= document.getElementById('{!$Component.pg.fm.pb1.Name}').value; //correcto
+            var myName= document.getElementById('pg:fm:pb1:Name').value;
+            alert('*****the value name====>'+myName);
+            alert('*****the value name ingresando por el dato componente====>'+myName1);
+        } 
+        function methodAge(){
+            alert ('*******Test');
+            var myAge1= document.getElementById('pg:fm:pb1:Age').value;//correcto
+            var myAge= document.getElementById('{!$Component.pg.fm.pb1.Age}').value;
+            alert('*****the value age====>'+myAge);
+            alert('*****the value age ingresando por el valor del formulario====>'+myAge1);
+        }
+        </script>           
+    </apex:form>
+</apex:page>
