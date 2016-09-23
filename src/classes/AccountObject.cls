@@ -18,8 +18,11 @@ global class AccountObject {
     }
     public String getPhone(){
         return phone;
-    }
+    
     public String getWebsite(){
         return website;
     }
+	public String getTest(){
+	 return test;
+	}
 }
