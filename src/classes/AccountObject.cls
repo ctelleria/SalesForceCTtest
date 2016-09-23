@@ -1,5 +1,5 @@
 global class AccountObject {
-	String test;
+	//String test; // commented variable
     String name;
     String accountNumber; 
     String phone;
